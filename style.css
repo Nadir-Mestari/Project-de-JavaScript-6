@@ -21,7 +21,7 @@ h1 {
 p {
   padding: 30px 50px;
 }
-#side-bar {
+.sideBar {
   position: absolute;
   width: 230px;
   height: 100%;
@@ -31,6 +31,11 @@ p {
   transition: 0.5s ease-out;
   z-index: 4;
 }
+
+.btn-remove {
+  left: 0;
+}
+
 .toggle-btn {
   position: absolute;
   top: 30px;
@@ -48,6 +53,7 @@ p {
   margin-top: 4px;
   transition: 0.3s ease;
 }
+
 li {
   color: #292929;
   list-style: none;
@@ -58,4 +64,26 @@ li {
 li:hover {
   background: #292929;
   color: #fcfcfb;
+}
+/* 
+~ = quand le btn-remove est présent tu me joue section */
+
+.btn-remove span {
+  position: absolute;
+}
+.btn-remove span:nth-of-type(1) {
+  position: absolute;
+  transform: rotate(45deg);
+}
+.btn-remove span:nth-of-type(2) {
+  opacity: 0;
+}
+.btn-remove span:nth-of-type(3) {
+  position: absolute;
+  transform: rotate(-45deg);
+}
+
+.btn-remove ~ section {
+  filter: blur(3px);
+  opacity: 0.5;
 }
